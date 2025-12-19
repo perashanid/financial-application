@@ -219,16 +219,7 @@ This is a personal project, but suggestions and feedback are welcome!
 
 MIT License - see LICENSE file for details
 
-## 👨‍💻 Author
 
-Built with ❤️ using Kiro AI
-
-## 📞 Support
-
-For questions or issues:
-1. Check the documentation in `/backend/README.md`
-2. Review the implementation summary in `IMPLEMENTATION_SUMMARY.md`
-3. See the quick start guide in `QUICK_START.md`
 
 ---
 
