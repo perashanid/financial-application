@@ -1,0 +1,266 @@
+/* Global Styles with Bluish Color Scheme */
+
+/* Import Tailwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Animations */
+@import './animations.css';
+
+/* Root Variables */
+:root {
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1e40af;
+  --primary-blue-light: #3b82f6;
+  --secondary-blue: #0ea5e9;
+  --accent-blue: #06b6d4;
+  --bg-blue-light: #eff6ff;
+  --bg-blue-lighter: #dbeafe;
+  --text-dark: #1e293b;
+  --text-gray: #64748b;
+  --border-blue: #bfdbfe;
+  --shadow-blue: rgba(37, 99, 235, 0.15);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+/* Override Tailwind Colors with Blue Theme */
+.bg-primary {
+  background-color: var(--primary-blue) !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-blue-dark) !important;
+}
+
+.bg-primary-light {
+  background-color: var(--primary-blue-light) !important;
+}
+
+.text-primary {
+  color: var(--primary-blue) !important;
+}
+
+.border-primary {
+  border-color: var(--border-blue) !important;
+}
+
+/* Button Styles */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.15), 0 10px 10px -5px rgba(37, 99, 235, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--bg-blue-lighter);
+  color: var(--primary-blue);
+}
+
+/* Alert Styles */
+.alert {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--primary-blue);
+  background-color: var(--bg-blue-light);
+  color: var(--text-dark);
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 3px solid var(--bg-blue-lighter);
+  border-top: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--bg-blue-light);
+  color: var(--primary-blue-dark);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-blue);
+}
+
+tr:hover {
+  background-color: var(--bg-blue-light);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 64, 175, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+  background-color: var(--primary-blue-dark);
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--bg-blue-lighter);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: var(--border-blue);
+  margin: 1.5rem 0;
+}
+
+/* Utility Classes */
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-blue {
+  box-shadow: 0 10px 30px -5px var(--shadow-blue);
+}
+
+.shadow-blue-lg {
+  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    border-radius: 0.75rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
